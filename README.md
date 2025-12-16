@@ -1,3 +1,6 @@
+###Live Link 
+https://tradexa-assignment.netlify.app/
+
 
 ### Prerequisites
 
