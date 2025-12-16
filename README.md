@@ -2,6 +2,9 @@
 https://tradexa-assignment.netlify.app/
 
 
+###Project Explanation PDF
+https://docs.google.com/document/d/1v7dA0mkhzPWqol1YAhSatKU4brke0g0sO5f_oJdBSq0/edit?usp=sharing
+
 ### Prerequisites
 
 Ensure you have the following installed:
