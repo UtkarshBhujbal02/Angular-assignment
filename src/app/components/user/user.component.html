@@ -1,0 +1,55 @@
+<h1 style="text-align: center;">Tradexa Assignment</h1>
+
+<div class="container">
+    @if (error) {
+    <div style="color: red; padding: 10px; border: 1px solid red; margin-bottom: 10px;">
+        {{ error }}
+    </div>
+    }
+
+    @if (successMessage) {
+    <div style="color: green; padding: 10px; border: 1px solid green; margin-bottom: 10px;">
+        {{ successMessage }}
+    </div>
+    }
+
+    <button (click)="formToggle()">{{ isFormOpen ? 'Cancel' : 'Add New Post' }}</button>
+
+    @if (isFormOpen) {
+    <div style="margin: 20px 0; padding: 10px; border: 1px solid #ccc; background-color: rgba(187, 250, 230, 0.612);">
+        <h2>Create New Post</h2>
+        <form (ngSubmit)="onAddPost()">
+            <div>
+                <label>Title:</label>
+                <input type="text" [(ngModel)]="newPost.title" name="title" required
+                    style="display: block; width: 100%; margin: 5px 0;">
+            </div>
+            <div>
+                <label>Body:</label>
+                <textarea [(ngModel)]="newPost.body" name="body" required rows="4"
+                    style="display: block; width: 100%; margin: 5px 0;"></textarea>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    }
+
+    <table border="1" style="width: 100%; margin-top: 20px; border-collapse: collapse; background-color: aliceblue;">
+        <thead>
+            <tr style="background-color: #e3f2fd; color: blue;">
+                <th style="border: 1px solid; padding: 8px;">ID</th>
+                <th style="border: 1px solid; padding: 8px;">Title</th>
+                <th style="border: 1px solid; padding: 8px;">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (post of posts; track post.id) {
+            <tr>
+                <td style="border: 1px solid; padding: 8px;">{{ post.id }}</td>
+                <td style="border: 1px solid; padding: 8px;">{{ post.title }}</td>
+                <td style="border: 1px solid; padding: 8px;">{{ post.body }}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
